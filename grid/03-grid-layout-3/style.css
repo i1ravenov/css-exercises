@@ -5,6 +5,10 @@
 
 .container {
   text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 1fr minmax(100px, 80%) 1fr;
+  gap: 4px;
 }
 
 .container div {
@@ -17,15 +21,30 @@
 
 .header {
   background-color: #393f4d;
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
 }
 
 .menu ul,
 .menu li {
   font-size: 16px;
+  list-style-type: none;
+}
+
+.menu ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1;
 }
 
 .sidebar {
   background-color: #FF7755;
+  grid-row: span 2;
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: repeat(4, minmax(200px, 1fr));
+  gap: 10px;
 }
 
 .sidebar .photo {
@@ -45,16 +64,26 @@
 }
 
 .nav {
-  background-color: #FF7755;
+  background-color: #FF7755; 
+}
+
+.nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .nav ul li {
   font-size: 16px;
   text-transform: uppercase;
+  list-style-type: none;
 }
 
 .article {
   background-color: #bccbde;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, 200px);
+  grid-template-rows: repeat(auto-fit, 200px);
 }
 
 .article p {
@@ -83,6 +112,7 @@
 
 .footer {
   background-color: #393f4d;
+  grid-column: span 2;
 }
 
 .footer p {
